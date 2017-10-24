@@ -2,6 +2,8 @@
 
 A class project that simulates a day of operation for a restaurant. Simulation is run using multiple threads and without the use of built in concurrent Java libraries.
 
+Project grade: 100%
+
 Simulation includes:
 
 - Customers who line up to enter the restaurant.
