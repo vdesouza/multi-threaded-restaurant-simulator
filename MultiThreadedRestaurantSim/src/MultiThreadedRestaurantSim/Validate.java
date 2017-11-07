@@ -6,7 +6,7 @@ import java.util.*;
 
 
 /**
- * Validates a simulation
+ * Just a bunch of tests that validate a simulation run
  */
 public class Validate {
     private static class InvalidSimulationException extends Exception {
@@ -519,8 +519,7 @@ public class Validate {
                         throw new InvalidSimulationException();
                 }
             }
-            //
-            //// Final sanity checks. Some of these are redundant, but reassuring
+
             Collection<EventType> finalCustomerStates = customerStates.values();
             Collection<EventType> finalCookStates = cookStates.values();
             Collection<EventType> finalMachineStates = machineStates.values();

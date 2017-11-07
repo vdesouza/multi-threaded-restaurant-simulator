@@ -4,8 +4,7 @@ import java.util.List;
 
 /**
  * This class represents each of the salient events that occur during the
- * simulation.  These events are created by the public factory methods
- * provided by the class.  DO NOT CHANGE THIS CLASS.
+ * simulation.
  */
 public class SimulationEvent {
     public enum EventType {
@@ -29,10 +28,10 @@ public class SimulationEvent {
     	MachineStarting,
     	MachineStartingFood,
     	MachineDoneFood,
-    	MachineEnding    			
+    	MachineEnding
     };
     public final EventType event;
-    /* Not all of these fields are relevant for every event; 
+    /* Not all of these fields are relevant for every event;
        see factory methods below */
     public final Cook cook;
     public final Customer customer;
@@ -42,7 +41,7 @@ public class SimulationEvent {
     public final int orderNumber;
     public final int[] simParams;
 
-    private SimulationEvent(EventType event, 
+    private SimulationEvent(EventType event,
 			    Cook cook,
 			    Customer customer,
 			    Machine machine,
@@ -179,11 +178,11 @@ public class SimulationEvent {
     }
 
     /* Machine events */
-    public static SimulationEvent machineStarting(Machine machine, 
-					   Food food, 
+    public static SimulationEvent machineStarting(Machine machine,
+					   Food food,
 					   int capacity) {
     	int[] params = new int[1];
-    	params[0] = capacity;	
+    	params[0] = capacity;
     	return new SimulationEvent(EventType.MachineStarting,
 				   null, null,
 				   machine,
@@ -226,7 +225,7 @@ public class SimulationEvent {
 	    return "Starting simulation: "+numCustomers+" customers; "+
 		numCooks+" cooks; "+numTables+" tables; "+
 		"machine capacity "+capacity+".";
-	    
+
 	case SimulationEnded:
 	    return "Simulation ended.";
 
@@ -238,8 +237,8 @@ public class SimulationEvent {
 	    return customer + " entered Restaurant.";
 
 	case CustomerPlacedOrder:
-	    return customer + " placing order " + orderNumber + " " + orderFood; 
-	    
+	    return customer + " placing order " + orderNumber + " " + orderFood;
+
 	case CustomerReceivedOrder:
 	    return customer + " received order " + orderNumber + " " + orderFood;
 
@@ -267,7 +266,7 @@ public class SimulationEvent {
 
     	/* Machine events */
 	case MachineStarting:
-	    return machine + " starting up for making " + 
+	    return machine + " starting up for making " +
 		food + "; " + simParams[0] +".";
 
 	case MachineStartingFood:
